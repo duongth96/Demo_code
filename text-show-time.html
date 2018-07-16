@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		span.item{
+			position: absolute;
+			left:100%;
+			font-size: 50px;
+			color: orange;
+			font-weight: bold;
+		}
+	</style>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			var i = 0;
+			var slec = $('.item');
+			console.log(slec.length);
+
+			var slide = setInterval(function(){
+				if(i == slec.length){
+					clearInterval(slide);
+				}else{
+					console.log(i);
+					$(slec[i]).animate({
+						left :'0'
+					},500, function() {
+						$(this).css('position','static');
+					});
+					i++;
+					console.log(i);
+					
+				}
+			},500);
+
+		});
+	</script>
+</head>
+<body style="margin:0px; padding:0px;">
+	
+</style>
+	<div id="showText" style="position: relative;">
+		<span class="item">P</span>
+		<span class="item">C</span>
+		<span class="item">A</span>
+	</div>
+</body>
+</html>
